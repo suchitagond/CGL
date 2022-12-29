@@ -1,39 +1,36 @@
-#include<iostream>
-#include<graphics.h>
-#include<math.h>
-
+#include <iostream>
+#include <graphics.h>
 void man()
 {
-	int i,x,y;
-	line(0,450,getmaxx(),450);
-	for(i=0;i<getmaxx()-180;i++)
-	{
-		cleardevice();
-		rectangle(10+i,300,60+i,400);
-		rectangle(70+i,363,80+i,383);
-		line(75+i,350,75+i,363);
-		line(15+i,400,55+i,450);
-		line(15+i,450,55+i,400);
-		circle(35+i,280,20);
-		line(35+i,310,75+i,350);
-		line(60+i,340,75+i,310);
-		line(75+i,310,75+i,250);
-		line(0+i,250,150+i,250);
-		arc(75+i,250,180,0,75);
-		for(int j=0;j<100;j++)
-		{
-			x=rand()%getmaxx();
-			y=rand()%getmaxy();
-			line(x,y,x+4,y+4);
-		}
-	}
+    int x, y;
+    line(0, 500, getmaxx(), 500);
+
+    for (int i = 0; i < getmaxx() - 180; i++)
+    {
+        cleardevice();
+        rectangle(10 + i, 300, 50 + i, 400);
+        line(20 + i, 400, 40 + i, 500);
+        line(40 + i, 400, 20 + i, 500);
+
+        line(10 + i, 300, 60 + i, 350);
+        line(50 + i, 350, 60 + i, 330);
+
+        line(60 + i, 330, 60 + i, 200);
+        line(10 + i, 200, 110 + i, 200);
+
+        circle(30 + i, 250, 50);
+        arc(60 + i, 200, 180, 0, 50);
+    }
+    for(int j=0;j<50;j++){
+        x=rand()%getmaxx();
+        y=rand()%getmaxy();
+        line(x,y,x+4,y+4);
+    }
 }
-int main()
-{
-	int gd=DETECT,gm;
-	initgraph(&gd,&gm,NULL);
-	man();
-	delay(10000);
-	closegraph();
-	return 0;
+int main(){
+    int gd=DETECT,gm;
+    initgraph(&gd,&gm,NULL);
+    man();
+    delay(1000);
+    closegraph();
 }
